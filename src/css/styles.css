@@ -153,17 +153,6 @@ input:active {
   animation: pulse-c6zlskmd 1s infinite;
 }
 
-/* .loader:before {
-  position: absolute;
-  content: '';
-  width: 40%;
-  height: 25%;
-  top: 20px;
-  left: 10px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 50%;
-  transform: rotate(-45deg);
-} */
 
 @keyframes pulse-c6zlskmd {
   100% {
