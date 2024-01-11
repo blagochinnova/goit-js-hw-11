@@ -8,7 +8,7 @@ const galleryContainer = document.querySelector('.gallery');
 const loaderElement = document.querySelector('.loader');
 
 let searchParamsDefaults = {
-  key: '41631198-f5cd04d694ed896bf4215baa6',
+  key: '41751590-b6ce5e955eace60263a904c25',
   image_type: 'photo',
   orientation: 'horizontal',
   safesearch: true,
