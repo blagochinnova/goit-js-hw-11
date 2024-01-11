@@ -73,29 +73,27 @@ function handleNoResults() {
 function searchImages(params) {
   showLoaderAndHideGallery();
 
-  setTimeout(function () {
-    fetch(`https://pixabay.com/api/?${params}`)
-      .then(response => {
-        hideLoaderAndShowGallery();
+  fetch(`https://pixabay.com/api/?${params}`)
+    .then(response => {
+      hideLoaderAndShowGallery();
 
-        if (!response.ok) {
-          throw new Error(error.message);
-        }
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
 
-        return response.json();
-      })
-      .then(({ hits }) => {
-        if (hits.length > 0) {
-          renderGallery(hits);
-          initializeImageLightbox();
-        } else {
-          handleNoResults();
-        }
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }, 2000);
+      return response.json();
+    })
+    .then(({ hits }) => {
+      if (hits.length > 0) {
+        renderGallery(hits);
+        initializeImageLightbox();
+      } else {
+        handleNoResults();
+      }
+    })
+    .catch(error => {
+      console.error(error);
+    });
 }
 
 searchForm.addEventListener('submit', event => {
